@@ -1,40 +1,76 @@
-.ipinfo{
-    position: absolute;
-    left: 50%;
-    top: 40%;
-    transform: translate(-50%,-50%);
-    background-color: $white;
-    width: 80vw;
-    height: 170px;
-    border-radius: 10px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+.ipinfo {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, -50%);
+  background-color: $white;
+  width: 80vw;
+  height: 170px;
+  border-radius: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  z-index: 2000;
+
+  @include responsive(tbp) {
+    top: 120%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    height: $height-searchBox;
+    width: 80vw;
     gap: 1rem;
-    z-index: 1000;
-    &__content{
-        font-weight: 500;
-        font-size: 2.5rem;
-        margin-top: 1rem;
+    padding: 2rem;
+  }
+
+  &__content {
+    font-weight: 500;
+    font-size: 2.5rem;
+    margin-top: 1rem;
+
+    @include responsive(tbp) {
+      font-weight: 500;
+      font-size: 2rem;
+      margin-top: 1rem;
+    }
+  }
+
+  &-box {
+    flex: 1;
+    padding-right: 4rem;
+    position: relative;
+
+    @include responsive(tbp) {
+      padding-right: 0px;
+      text-align: center;
+      width: 100%;
+      height: fit-content;
+      flex: 0;
     }
 
-    &-box{
-        flex: 1;
-        padding-right: 4rem;
-        position: relative;
-        // width: 100px;
-        &:not(:last-child)::after{
-            content:"";
-            width: 1px;
-            height: 100%;
-            left: 100%;
-            top: 1rem;
-            position: absolute;
-            background-color: rgba($darkgray,0.3);
-        }
+    &:not(:last-child)::after {
+      content: "";
+      width: 1px;
+      height: 100%;
+      left: 100%;
+      top: 1rem;
+      position: absolute;
+      background-color: rgba($darkgray, 0.3);
 
-        &:not(:first-child){
-            padding-left: 2rem;
-        }
+      @include responsive(tbp) {
+        display: none;
+      }
     }
+
+    &:not(:first-child) {
+      padding-left: 2rem;
+
+      @include responsive(tbp) {
+        padding-left: 0rem;
+      }
+    }
+  }
 }

@@ -1,0 +1,30 @@
+/*
+0 - 600px           Phone
+600px - 900px       Tablet Portrait
+900px - 1200px      Tablet Landscape
+1200px - 1800px     is where normal styles apply
+
+mb
+tbp
+tbl
+*/
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == tbl {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tbp {
+    @media (max-width: 900px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == mb {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+}

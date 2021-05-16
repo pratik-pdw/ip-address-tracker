@@ -1,8 +1,11 @@
-.mapcontainer{
-    height: calc(100vh - 35vh);
+.mapcontainer {
+  height: calc(100vh - 35vh);
 
-    &__icon{
-        outline: none;
-        background: transparent;
-    }
+  @include responsive(tbp) {
+    height: calc(100vh - 30vh);
+  }
+  &__icon {
+    outline: none;
+    background: transparent;
+  }
 }
