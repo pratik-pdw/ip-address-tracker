@@ -14,7 +14,6 @@ function App() {
   useEffect(() => {
     setIpInfo({ loading: true });
     getIpOrDomainInfo().then((data) => {
-      // console.log(data);
       setIpInfo({ ...data, loading: false });
     });
   }, []);
